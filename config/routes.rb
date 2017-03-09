@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   get 'potepan/index'
   get 'potepan/product_grid_left_sidebar'
   get 'potepan/product_list_left_sidebar'
-  get 'potepan/single_product'
+  # get 'potepan/single_product'
+
+  namespace :potepan do
+    resources :products, only: [:show]
+  end
   get 'potepan/cart_page'
   get 'potepan/blog_left_sidebar'
   get 'potepan/blog_right_sidebar'

@@ -11,4 +11,8 @@ class PotepanController < ApplicationController
   def checkout_step_4
   end
 
+  def single_product
+    @single_product = Spree::Product.find(params[:id])
+  end
+
 end
