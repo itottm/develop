@@ -15,4 +15,8 @@ class PotepanController < ApplicationController
     @single_product = Spree::Product.find(params[:id])
   end
 
+  def product_grid_left_sidebar
+    @single_products = Spree::Product.all
+  end
+
 end
