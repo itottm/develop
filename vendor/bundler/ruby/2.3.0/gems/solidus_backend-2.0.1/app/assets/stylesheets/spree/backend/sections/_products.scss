@@ -1,0 +1,54 @@
+[data-hook="admin_products_index_search"] {
+  @include make-row();
+
+  > * {
+    @include make-col();
+    @include padding(0 null); // override the padding on .field
+  }
+}
+
+.product-search-field-name {
+  @include make-col-span(6);
+}
+
+.product-search-field-sku {
+  @include make-col-span(4);
+}
+
+.product-search-field-show-deleted.field.checkbox {
+  // extra specificity to override styles
+  @include make-col-span(2);
+  min-height: initial; // override .field.checkbox
+  margin-bottom: 0; // override .checkbox
+}
+
+div[data-hook="admin_products_index_search_buttons"] {
+  margin-top: 2rem;
+}
+
+[data-hook="admin_product_form_fields"] {
+  label {
+    display: inline-block;
+  }
+  input, select, textarea, .select2-container {
+    width: 100%;
+  }
+  input[type="checkbox"] {
+    width: auto;
+    vertical-align: bottom;
+  }
+}
+
+[data-hook="admin_product_form_multiple_variants"] {
+  .info-actions {
+    text-align: right;
+  }
+}
+
+.outstanding-balance {
+  margin-bottom: 15px;
+
+  strong {
+    color: $color-2;
+  }
+}
