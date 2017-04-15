@@ -21,6 +21,7 @@
 .byebug_history
 
 vendor/bundle
+vendor/bundler
 
 .idea/
 *.iml
