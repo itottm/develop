@@ -2,7 +2,7 @@ class Potepan::ProductsController < ApplicationController
 
   def index
     if params[:category]
-      @products = Spree::Product.includes(:taxons).where("upper(spree_taxons.name) like ?", "%#{params[:category]}%").references(:taxons).includes(:prices)
+      @products = Spree::Product.includes(:taxons).where("upper(spree_taxons.name) like ?", "%#{Spree::Product.escape_like(params[:category])}%").references(:taxons).includes(:prices)
     else
       @products = Spree::Product.all
     end
